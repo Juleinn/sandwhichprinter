@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!DOCTYPE SANDWICH>
+<sandwich>
+  <slice>bread</slice>
+  <garnish>butter</garnish>
+  <garnish>jam</garnish>
+  <slice>bread</slice>
+</sandwich>
