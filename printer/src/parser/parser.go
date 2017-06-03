@@ -11,8 +11,8 @@ type Sandwich struct{
   Garnishes []string `xml:"garnish"`
 }
 
-func Parse(filename string) (Sandwich, error){
-  fmt.Println("Parsing ", filename)
+func ParseFile(filename string) (Sandwich, error){
+  fmt.Println("Parsing file : ", filename)
   var sandwich Sandwich
   file, err := os.Open(filename)
   if err != nil {
@@ -25,4 +25,10 @@ func Parse(filename string) (Sandwich, error){
   }
 
   return sandwich, nil
+}
+
+func ParseXML(data []byte)(Sandwich, error){
+	fmt.Println("Parsing data : \n", string(data));
+	var sandwich Sandwich
+	return sandwich, nil
 }

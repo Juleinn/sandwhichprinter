@@ -12,6 +12,23 @@ import (
   "parser"
 )
 
+/* A few global variables for the printer to work */
+var conveyor C.Motor
+var disk_drive C.Motor
+var extruder1 C.Motor
+
+var initialized bool
+
+func Init(){
+//	conveyor = C.motor_init()
+//	disk_drive = C.motor_init()
+//	extruder1 = C.motor_init()
+}
+
+func push_slice(){
+	// push motor stop and backwards accordingly
+}
+
 func Print(sandwich parser.Sandwich){
 	fmt.Println("Printing sandwich : ", sandwich)
 	var m C.Motor

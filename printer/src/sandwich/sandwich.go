@@ -14,7 +14,7 @@ func main(){
   }
   fmt.Println("Hello world. Parser. ")
   sdw_file := os.Args[1]
-  sandwich, err := parser.Parse(sdw_file)
+  sandwich, err := parser.ParseFile(sdw_file)
   if(err != nil){
     fmt.Println("Unable to parse sandwich properly")
     os.Exit(1)
