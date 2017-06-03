@@ -4,6 +4,8 @@ import (
 	"net/http"
 	"fmt"
 	"io/ioutil"
+	"parser"
+	"printer"
 	)
 
 func print_sandwich(rw http.ResponseWriter, req *http.Request)  {
@@ -13,10 +15,21 @@ func print_sandwich(rw http.ResponseWriter, req *http.Request)  {
 		fmt.Println("Unable to parse sandwich")
 	}
 	fmt.Println(string(body))
-
+	// parse xml file then send to printer
+	sandwich, err := parser.ParseXML(body)
+	if err != nil {
+		fmt.Println("error parsing sent xml : ", err)
+		// tell sender failure
+		fmt.Fprintf(rw, "Error parsing xml\n")
+	} else {
+		fmt.Println("Printing sandwich : ", sandwich)
+		// send it to the printer
+		printer.Print(sandwich)
+		fmt.Fprintf(rw, "Sandwich will be printer soon\n")
+	}
 }
 
-func start(port int){
+func Start(port string){
 	http.HandleFunc("/print", print_sandwich)
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":" + port, nil)
 }
