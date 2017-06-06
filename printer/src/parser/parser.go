@@ -28,7 +28,6 @@ func ParseFile(filename string) (Sandwich, error){
 }
 
 func ParseXML(data []byte)(Sandwich, error){
-	fmt.Println("Parsing data : \n", string(data));
 	var sandwich Sandwich
 	if err := xml.Unmarshal(data, &sandwich); err != nil{
 		return sandwich, err
