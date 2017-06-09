@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="./css/uikit.gradient.min.css" />
+  <link rel="stylesheet" href="./css/uikit.css" />
+  <link rel="stylesheet" href="./css/components/slider.css" />
+  <script src="./js/jquery.js"></script>
+  <script src="./js/uikit.min.js"></script>
+  <script src="./js/jquery.js"></script>
+  <script src="./js/components/slider.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <nav class="uk-navbar">
+    <a href="#offcanvas" data-uk-offcanvas class="uk-navbar-toggle uk-hidden-large"/>
+    <a href="" class="uk-navbar-brand">
+      <img src="./bread_small.png" width="35" height="40"/>Sandwich Printer
+    </a>
+    <ul class="uk-navbar-nav uk-visible-large">
+      <li><a href="index.html">Home</a></li>
+      <li class="uk-active"><a href="order.html">Order</a></li>
+      <li class="uk-parent"><a href="config.html">Config</a></li>
+    </ul>
+  </nav>
+
+  <div id="offcanvas" class="uk-offcanvas">
+    <div class="uk-offcanvas-bar">
+
+      <ul class="uk-nav uk-nav-offcanvas">
+        <li><a href="index.html">Home</a></li>
+        <li class="uk-active"><a href="order.html">Order</a></li>
+        <li class="uk-parent"><a href="config.html">Config</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="uk-grid uk-margin">
+    <div class="uk-width-medium-4-5 uk-container-center">
+      <div class="uk-panel uk-panel-box">
+
+        <div class="uk-container-center uk-width-1-1 uk-width-large-1-2 uk-width-small-2-3">
+          <h1>Sandwich : </h1>
+
+          <div class="uk-slidenav-position" data-uk-slider="{center:true}">
+            <div class="uk-slider-container">
+              <ul class="uk-slider uk-grid-width-1-3">
+                <li><img class="uk-align-center" src="y.png"/></li>
+                <li><img class="uk-align-center" src="y.png"/></li>
+                <li><img class="uk-align-center" src="y.png"/></li>
+              </ul>
+            </div>
+            <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slider-item="previous"></a>
+            <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slider-item="next"></a>
+          </div>
+          <div class="uk-slidenav-position" data-uk-slider="{center:false}">
+            <div class="uk-slider-container">
+              <ul class="uk-slider uk-grid-width-1-3">
+                <li><img class="uk-align-center" src="y.png"/></li>
+                <li><img class="uk-align-center" src="y.png"/></li>
+                <li><img class="uk-align-center" src="y.png"/></li>
+              </ul>
+            </div>
+            <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slider-item="previous"></a>
+            <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slider-item="next"></a>
+          </div>
+          <div class="uk-slidenav-position" data-uk-slider="{center:false}">
+            <div class="uk-slider-container">
+              <ul class="uk-slider uk-grid-width-1-3">
+                <li><img class="uk-align-center" src="y.png"/></li>
+                <li><img class="uk-align-center" src="y.png"/></li>
+                <li><img class="uk-align-center" src="y.png"/></li>
+              </ul>
+            </div>
+            <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slider-item="previous"></a>
+            <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slider-item="next"></a>
+          </div>
+          <div class="uk-slidenav-position" data-uk-slider="{center:false}">
+            <div class="uk-slider-container">
+              <ul class="uk-slider uk-grid-width-1-3">
+                <li><img class="uk-align-center" src="y.png"/></li>
+                <li><img class="uk-align-center" src="y.png"/></li>
+                <li><img class="uk-align-center" src="y.png"/></li>
+              </ul>
+            </div>
+            <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slider-item="previous"></a>
+            <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slider-item="next"></a>
+          </div>
+
+          <br/>
+          <button class="uk-button uk-button-large uk-align-center" type="button">Print</button>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
