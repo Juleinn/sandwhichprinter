@@ -1,0 +1,26 @@
+{
+	"Bread": [
+		{
+			"Name": "Bread",
+			"Icon": "bread_tiny.png"
+		},
+		{
+			"Name": "Nothing",
+			"Icon": "empty_tiny.png"
+		},
+	],
+	"Garnish": [
+		{
+			"Name": "Raspberry",
+			"Icon": "red_tiny.png"
+		},
+		{
+			"Name": "Blueberry",
+			"Icon": "purple_tiny.png"
+		},
+		{
+			"Name": "Butter",
+			"Icon": "butter_tiny.png"
+		}
+	]
+}

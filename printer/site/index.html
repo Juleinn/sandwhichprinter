@@ -4,11 +4,13 @@
   <title></title>
   <link rel="stylesheet" href="./css/uikit.gradient.min.css" />
   <link rel="stylesheet" href="./css/uikit.css" />
-  <link rel="stylesheet" href="./css/components/slide.css" />
+  <link rel="stylesheet" href="./css/components/slider.css" />
   <script src="./js/jquery.js"></script>
   <script src="./js/uikit.min.js"></script>
   <script src="./js/jquery.js"></script>
-  <script src="./js/components/slide.js"></script>
+  <script src="./js/components/slider.js"></script>
+  <script src="./js/printer_home.js"></script>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -38,14 +40,11 @@
   <div class="uk-grid uk-margin">
     <div class="uk-width-medium-4-5 uk-container-center">
       <div class="uk-panel uk-panel-box">
-        <h1>Welcome to the sandwich printer's main interface</h1>
-        <h2>Currently being printed : </h2>
-        <ul class="uk-list uk-list-striped">
-          <li>Sandwich1</li>
-          <li>Sandwich2</li>
-          <li>Sandwich2</li>
-          <li>Sandwich3</li>
-          <li>Sandwich4</li>
+        <h1>Welcome to the sandwich printer"s main interface</h1>
+        <h2 class="uk-display-inline">Currently being printed : </h2>
+        <button id="reload_button" class="uk-button uk-button-small">Reload</button>
+        <ul id="sandwich_list" class="uk-list uk-list-striped">
+
         </ul>
       </div>
     </div>
