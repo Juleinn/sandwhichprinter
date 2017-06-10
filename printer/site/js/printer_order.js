@@ -7,7 +7,7 @@ $(document).ready(function(){
     	bottomSlice	 = $("#bottomslice_selector").children("li.uk-active").text()
     	if(confirm("Confirm sandwich : " + topSlice + "," + topGarnish + "," + bottomGarnish + "," + bottomSlice  + "?"))
     	{
-    		$.post("print", {
+    		$.post("/print", {
     			"test sandwich": true
     		})
     	}

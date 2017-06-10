@@ -54,7 +54,8 @@ func Start(port string){
 	// initialize printer
 	printer.Init()
 	http.HandleFunc("/print", print_sandwich)
-	http.HandleFunc("/static/", static)
+	fs := http.FileServer(http.Dir("site"))
+	http.Handle("/static/", http.StripPrefix("/static/", fs))
 	http.HandleFunc("/sandwiches", get_sandwiches)
 	http.ListenAndServe(":" + port, nil)
 }
