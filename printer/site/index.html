@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
-  <link rel="stylesheet" href="./css/uikit.gradient.min.css" />
-  <link rel="stylesheet" href="./css/uikit.css" />
-  <link rel="stylesheet" href="./css/components/slider.css" />
-  <script src="./js/jquery.js"></script>
-  <script src="./js/uikit.min.js"></script>
-  <script src="./js/jquery.js"></script>
-  <script src="./js/components/slider.js"></script>
-  <script src="./js/printer_home.js"></script>
-
+  <link rel="stylesheet" href="static/css/uikit.gradient.min.css" />
+  <link rel="stylesheet" href="static/css/uikit.css" />
+  <link rel="stylesheet" href="static/css/components/slider.css" />
+  <link rel="stylesheet" href="static/css/components/sticky.min.css" />
+  <script src="static/js/jquery.js"></script>
+  <script src="static/js/uikit.min.js"></script>
+  <script src="static/js/jquery.js"></script>
+  <script src="static/js/components/slider.js"></script>
+  <script src="static/js/components/sticky.min.js"></script>
+  <script src="static/js/printer_home.js"></script>
+  <link rel="icon" type="image/png" href="static/bread_small.png" />
+  <title>Sandwich Printer</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <nav class="uk-navbar">
+  <nav class="uk-navbar" data-uk-sticky>
     <a href="#offcanvas" data-uk-offcanvas class="uk-navbar-toggle uk-hidden-large"/>
     <a href="" class="uk-navbar-brand">
-      <img src="./bread_small.png" width="35" height="40"/>Sandwich Printer
+      <img src="static/bread_small.png" width="35" height="40"/>Sandwich Printer
     </a>
     <ul class="uk-navbar-nav uk-visible-large">
-      <li class="uk-active"><a href="index.html">Home</a></li>
-      <li><a href="order.html">Order</a></li>
-      <li class="uk-parent"><a href="config.html">Config</a></li>
+      <li class="uk-active"><a href="/">Home</a></li>
+      <li><a href="/order">Order</a></li>
+      <li class="uk-parent"><a href="/config">Config</a></li>
     </ul>
   </nav>
 
@@ -32,8 +34,8 @@
 
       <ul class="uk-nav uk-nav-offcanvas">
         <li class="uk-active"><a href="index.html">Home</a></li>
-        <li><a href="order.html">Order</a></li>
-        <li class="uk-parent"><a href="config.html">Config</a></li>
+        <li><a href="/order">Order</a></li>
+        <li class="uk-parent"><a href="/config">Config</a></li>
       </ul>
     </div>
   </div>

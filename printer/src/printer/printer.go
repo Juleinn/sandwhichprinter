@@ -56,11 +56,11 @@ func push_slice(){
 func printer_loop(){
 	for {
 		<-sandwiches_states
-		fmt.Println("Printing sandwich : ", sandwiches[0])
+		// fmt.Println("Printing sandwich : ", sandwiches[0])
 		// clear first entry of the fifo
+		// print_sandwich_fifo()
+		time.Sleep(30 * time.Second)
 		sandwiches = sandwiches[1:]
-		print_sandwich_fifo()
-		time.Sleep(5 * time.Second)
 	}
 }
 
@@ -87,7 +87,6 @@ func Print(sandwich parser.Sandwich) error{
 	// add sandwich to queue for printing
 	sandwiches = append(sandwiches, sandwich)
 	sandwiches_states<-true;
-	print_sandwich_fifo();
 	return nil;
 }
 

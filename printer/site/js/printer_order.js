@@ -32,7 +32,13 @@ $(document).ready(function(){
     			xmlDocument.documentElement.appendChild(bottomSliceElem);
     		}
 
-    		$.post("/print", (new XMLSerializer().serializeToString(xmlDocument.documentElement)));
+    		$.post("/print", (new XMLSerializer().serializeToString(xmlDocument.documentElement)), function(data, status){
+				if(status == "success"){
+					window.location.href = "/";
+				} else {
+					alert("Unable to print sandwich");
+				}
+			});
 
     	}
     });

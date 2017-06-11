@@ -4,6 +4,7 @@ import (
 	"net/http"
 	"fmt"
 	"io/ioutil"
+	"io"
 	"parser"
 	"printer"
 	"encoding/json"
@@ -24,7 +25,7 @@ func print_sandwich(rw http.ResponseWriter, req *http.Request)  {
 	} else {
 		// send it to the printer
 		printer.Print(sandwich)
-		fmt.Fprintf(rw, "Sandwich will be printer soon\n")
+		io.WriteString(rw, "Sandwich will be printed soon");
 	}
 }
 
@@ -38,24 +39,49 @@ func get_sandwiches(rw http.ResponseWriter, req *http.Request) {
 	}
 }
 
-func static(rw http.ResponseWriter, req * http.Request){
-	path := "site/" + req.URL.Path[len("/static/"):]
-	fmt.Println(path)
-	body, err := ioutil.ReadFile(path)
+func aliasHandler(route string) func(http.ResponseWriter, *http.Request){
+	return func(rw http.ResponseWriter, req * http.Request){
+		body, err := ioutil.ReadFile(route)
+			if err == nil{
+			fmt.Fprintf(rw, "%s", body);
+		} else {
+			fmt.Println(err);
+			fmt.Fprintf(rw, "Unable to get home page");
+		}
+	}
+}
+
+func handleHome(rw http.ResponseWriter, req * http.Request){
+	body, err := ioutil.ReadFile("site/index.html")
 	if err == nil{
-		fmt.Fprintf(rw, "%s", body)
+		fmt.Fprintf(rw, "%s", body);
 	} else {
-		fmt.Println(err)
-		fmt.Fprintf(rw, "Unable to get document : ", path)
+		fmt.Println(err);
+		fmt.Fprintf(rw, "Unable to get home page");
 	}
 }
 
 func Start(port string){
 	// initialize printer
 	printer.Init()
-	http.HandleFunc("/print", print_sandwich)
+
+	// init server
+	// handle all static routes
 	fs := http.FileServer(http.Dir("site"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
+
+	// handle dynamic content
 	http.HandleFunc("/sandwiches", get_sandwiches)
+	http.HandleFunc("/print", print_sandwich)
+
+	// handle static route aliases (for home)
+	homeHandler := aliasHandler("site/index.html");
+	orderHandler := aliasHandler("site/order.html");
+	configHandler := aliasHandler("site/config.html");
+	http.HandleFunc("/", homeHandler);
+	http.HandleFunc("/order", orderHandler);
+	http.HandleFunc("/config", configHandler);
+
+
 	http.ListenAndServe(":" + port, nil)
 }

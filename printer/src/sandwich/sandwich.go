@@ -16,7 +16,7 @@ func main(){
 	}
 
 	if os.Args[1] == "-s" {
-		fmt.Println("Starting server...")
+		// fmt.Println("Starting server...")
 		server.Start(os.Args[2])
 	} else if os.Args[1] == "-f" {
 		sdw_file := os.Args[2]
