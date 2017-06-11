@@ -9,6 +9,8 @@ import(
       )
 
 func main(){
+	/* 	launch with sandwich stored as a file with 	sandwich -f filename.sdw 	*
+	 *	launch with online service with 			sandwich -s port 			*/
 	if len(os.Args) != 3 {
 		fmt.Println("Use :\n-f [filename]")
 		fmt.Println("-s [port]")
