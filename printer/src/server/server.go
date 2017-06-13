@@ -63,13 +63,8 @@ func handleHome(rw http.ResponseWriter, req * http.Request){
 }
 
 func available(rw http.ResponseWriter, req * http.Request){
-	data, err := stock.GetJSON();
-	if err != nil{
-		fmt.Fprintf(rw, "{\"error\": \"Unable to get available products\"}");
-	}
-
-	str := string(data);
-	fmt.Fprintf(rw, "%s", str);
+	data := stock.Get();
+	json.NewEncoder(rw).Encode(data);
 }
 
 func Start(port string){

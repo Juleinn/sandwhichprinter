@@ -3,12 +3,12 @@
 <head>
   <link rel="stylesheet" href="static/css/uikit.gradient.min.css" />
   <link rel="stylesheet" href="static/css/uikit.css" />
-  <link rel="stylesheet" href="static/css/components/slide.css" />
+  <link rel="stylesheet" href="static/css/components/slider.css" />
   <link rel="stylesheet" href="static/css/components/sticky.min.css" />
   <script src="static/js/jquery.js"></script>
   <script src="static/js/uikit.min.js"></script>
   <script src="static/js/jquery.js"></script>
-  <script src="static/js/components/slide.js"></script>
+  <script src="static/js/components/slider.js"></script>
   <script src="static/js/components/sticky.min.js"></script>
   <meta charset="utf-8">
   <link rel="icon" type="image/png" href="static/bread_small.png" />
@@ -42,8 +42,27 @@
   <div class="uk-grid uk-margin">
     <div class="uk-width-medium-4-5 uk-container-center">
       <div class="uk-panel uk-panel-box">
-		<h2>Nothing to configure yet</h2>
-      </div>
+      	<div class="uk-panel uk-panel-box">
+			<h2>Extrusion head config</h2>
+			<h3>Head 0: </h3>
+			<p>
+				Garnish name 	  : <br/><input type="text" id="head0_name"/><br/><br/>
+				Garnish image URL : <br/><input type="text" id="head0_img"/>
+			
+			</p>
+			<h3>Head 1 (unavailable yet): </h3>
+			<h3>Head 2 (unavailable yet): </h3>
+			<h2>Bread dispenser config</h2>
+			<h3>Rack 0 : </h3>
+			<p>
+				Bread  name 	  : <br/><input type="text" id="disp0_name"/><br/><br/>
+				Bread  image URL  : <br/><input type="text" id="disp0_img"/>
+			
+			</p>
+			</div> 
+        <br/>
+		<button id="save_button" class="uk-button uk-button-large uk-align-center" type="button">Save</button>
+	  </div>
     </div>
   </div>
 </body>

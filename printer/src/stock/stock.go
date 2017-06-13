@@ -2,7 +2,7 @@ package stock
 
 import(
 	"encoding/xml"
-	// "encoding/json"
+	"encoding/json"
 	"os"
 	"fmt"
 )
@@ -15,7 +15,7 @@ type Slice struct{
 
 type Garnish struct{
 	XMLName	xml.Name	`xml:"garnish"`
-	Name	string		`xml:",chardata`
+	Name	string		`xml:",chardata"`
 	Img		string		`xml:"img,attr"`
 }
 
@@ -46,7 +46,6 @@ func Load(){
 		fmt.Println("Unable to parse stock file");
 		return;
 	}
-	fmt.Println("Stock : ", stock);
 	initialized = true;
 }
 
@@ -59,7 +58,7 @@ func Get() Stock{
  * format */
 func GetJSON()([]byte, error){
 	// marshal stock & return
-	data, err := xml.Marshal(&stock)
+	data, err := json.Marshal(&stock)
 	if err != nil{
 		fmt.Println("Unable to marshal stock");
 		return nil, err;
