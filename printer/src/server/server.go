@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"io"
 	"parser"
+	"stock"
 	"printer"
 	"encoding/json"
 	)
@@ -61,6 +62,16 @@ func handleHome(rw http.ResponseWriter, req * http.Request){
 	}
 }
 
+func available(rw http.ResponseWriter, req * http.Request){
+	data, err := stock.GetJSON();
+	if err != nil{
+		fmt.Fprintf(rw, "{\"error\": \"Unable to get available products\"}");
+	}
+
+	str := string(data);
+	fmt.Fprintf(rw, "%s", str);
+}
+
 func Start(port string){
 	// initialize printer
 	printer.Init()
@@ -82,6 +93,9 @@ func Start(port string){
 	http.HandleFunc("/order", orderHandler);
 	http.HandleFunc("/config", configHandler);
 
+	// get available products
+	stock.Load();
+	http.HandleFunc("/available", available);
 
 	http.ListenAndServe(":" + port, nil)
 }

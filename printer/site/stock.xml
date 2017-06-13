@@ -1,0 +1,5 @@
+<stock>
+	<slice img="bread_tiny.png">Bread</slice>
+	<garnish img="pink_tiny.png">Tarama</garnish>
+	<garnish img="butter_tiny.png">Butter</garnish>
+</stock>
