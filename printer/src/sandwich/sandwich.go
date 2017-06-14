@@ -11,10 +11,21 @@ import(
 func main(){
 	/* 	launch with sandwich stored as a file with 	sandwich -f filename.sdw 	*
 	 *	launch with online service with 			sandwich -s port 			*/
-	if len(os.Args) != 3 {
-		fmt.Println("Use :\n-f [filename]")
-		fmt.Println("-s [port]")
+	if len(os.Args) < 3 {
+		fmt.Println("Use :\n-f [filename] or -s [port]")
+		fmt.Println("(optional) -p [working path]")
+		fmt.Println("Params must be in right order")
 		return
+	}
+
+	if len(os.Args) == 5{
+		// set up working path accordingly
+		err := os.Chdir(os.Args[4]);
+		if err != nil {
+			fmt.Println("Unable to change working dir to : ", os.Args[4]);
+			fmt.Println(err);
+			return;
+		}
 	}
 
 	if os.Args[1] == "-s" {

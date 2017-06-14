@@ -50,7 +50,7 @@ func Init(){
 }
 
 func push_slice(){
-	// push motor stop and backwards accordingly
+	
 }
 
 func printer_loop(){
