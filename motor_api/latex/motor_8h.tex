@@ -1,0 +1,154 @@
+\hypertarget{motor_8h}{}\section{motor/motor.h File Reference}
+\label{motor_8h}\index{motor/motor.\+h@{motor/motor.\+h}}
+
+
+motor control functions with end of track detection  
+
+
+{\ttfamily \#include $<$wiring\+Pi.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+Include dependency graph for motor.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structMotor}{Motor}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{motor_8h_a6ddfdda7a062d10cff4a72b76b44aeb8}{F\+O\+R\+W\+A\+RD}~1
+\item 
+\#define \hyperlink{motor_8h_a4440df5c11c855cc62ab734a1a7dee71}{B\+A\+C\+K\+W\+A\+R\+DS}~2
+\item 
+\#define \hyperlink{motor_8h_a35f1467bf87db9e9d057b19e73342bf1}{S\+A\+M\+P\+L\+E\+\_\+\+D\+E\+L\+AY}~1
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structMotor}{Motor} \hyperlink{motor_8h_af1fc001312656d26e75ba070a26161b5}{Motor}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structMotor}{Motor} \hyperlink{motor_8h_a15cd21f7ef9f08a1e134c8fdb4810783}{motor\+\_\+init} (int pin1, int pin2, int sens1, int sens2)
+\begin{DoxyCompactList}\small\item\em initializes motor with end of track sensors \end{DoxyCompactList}\item 
+void \hyperlink{motor_8h_a3fc894cb686a2727fe7444c23a6dc0d4}{motor\+\_\+set\+\_\+speed} (\hyperlink{structMotor}{Motor} $\ast$m, int speed)
+\begin{DoxyCompactList}\small\item\em sets the speed for a motor (unimplemented now) \end{DoxyCompactList}\item 
+void \hyperlink{motor_8h_a264b9434c735542368d0cc1b01dbecca}{motor\+\_\+run\+\_\+stop} (\hyperlink{structMotor}{Motor} m, int direction)
+\begin{DoxyCompactList}\small\item\em runs the motor in the given direction until it hits its end-\/of-\/track sensor. Only checks for sensor 1 if run in direction 1, sensor 2 if run in direction 2 \end{DoxyCompactList}\item 
+void \hyperlink{motor_8h_a87e6576d19318dc626ad8a942d031a38}{motor\+\_\+run\+\_\+time} (\hyperlink{structMotor}{Motor} m, int direction, int ms)
+\begin{DoxyCompactList}\small\item\em runs the motor for a specified amount of time without checking for end-\/of-\/track sensor detection \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+motor control functions with end of track detection 
+
+
+
+\subsection{Macro Definition Documentation}
+\index{motor.\+h@{motor.\+h}!B\+A\+C\+K\+W\+A\+R\+DS@{B\+A\+C\+K\+W\+A\+R\+DS}}
+\index{B\+A\+C\+K\+W\+A\+R\+DS@{B\+A\+C\+K\+W\+A\+R\+DS}!motor.\+h@{motor.\+h}}
+\subsubsection[{\texorpdfstring{B\+A\+C\+K\+W\+A\+R\+DS}{BACKWARDS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+A\+C\+K\+W\+A\+R\+DS~2}\hypertarget{motor_8h_a4440df5c11c855cc62ab734a1a7dee71}{}\label{motor_8h_a4440df5c11c855cc62ab734a1a7dee71}
+\index{motor.\+h@{motor.\+h}!F\+O\+R\+W\+A\+RD@{F\+O\+R\+W\+A\+RD}}
+\index{F\+O\+R\+W\+A\+RD@{F\+O\+R\+W\+A\+RD}!motor.\+h@{motor.\+h}}
+\subsubsection[{\texorpdfstring{F\+O\+R\+W\+A\+RD}{FORWARD}}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+O\+R\+W\+A\+RD~1}\hypertarget{motor_8h_a6ddfdda7a062d10cff4a72b76b44aeb8}{}\label{motor_8h_a6ddfdda7a062d10cff4a72b76b44aeb8}
+\index{motor.\+h@{motor.\+h}!S\+A\+M\+P\+L\+E\+\_\+\+D\+E\+L\+AY@{S\+A\+M\+P\+L\+E\+\_\+\+D\+E\+L\+AY}}
+\index{S\+A\+M\+P\+L\+E\+\_\+\+D\+E\+L\+AY@{S\+A\+M\+P\+L\+E\+\_\+\+D\+E\+L\+AY}!motor.\+h@{motor.\+h}}
+\subsubsection[{\texorpdfstring{S\+A\+M\+P\+L\+E\+\_\+\+D\+E\+L\+AY}{SAMPLE_DELAY}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+A\+M\+P\+L\+E\+\_\+\+D\+E\+L\+AY~1}\hypertarget{motor_8h_a35f1467bf87db9e9d057b19e73342bf1}{}\label{motor_8h_a35f1467bf87db9e9d057b19e73342bf1}
+
+
+\subsection{Typedef Documentation}
+\index{motor.\+h@{motor.\+h}!Motor@{Motor}}
+\index{Motor@{Motor}!motor.\+h@{motor.\+h}}
+\subsubsection[{\texorpdfstring{Motor}{Motor}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf Motor} {\bf Motor}}\hypertarget{motor_8h_af1fc001312656d26e75ba070a26161b5}{}\label{motor_8h_af1fc001312656d26e75ba070a26161b5}
+
+
+\subsection{Function Documentation}
+\index{motor.\+h@{motor.\+h}!motor\+\_\+init@{motor\+\_\+init}}
+\index{motor\+\_\+init@{motor\+\_\+init}!motor.\+h@{motor.\+h}}
+\subsubsection[{\texorpdfstring{motor\+\_\+init(int pin1, int pin2, int sens1, int sens2)}{motor_init(int pin1, int pin2, int sens1, int sens2)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Motor} motor\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{int}]{pin1, }
+\item[{int}]{pin2, }
+\item[{int}]{sens1, }
+\item[{int}]{sens2}
+\end{DoxyParamCaption}
+)}\hypertarget{motor_8h_a15cd21f7ef9f08a1e134c8fdb4810783}{}\label{motor_8h_a15cd21f7ef9f08a1e134c8fdb4810783}
+
+
+initializes motor with end of track sensors 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin1,pin2} & the G\+P\+IO for running motor in directions 1,2 \\
+\hline
+{\em sens1,sens2} & the G\+P\+IO input pin for end of track sensor 1,2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the generated motor descriptor 
+\end{DoxyReturn}
+\index{motor.\+h@{motor.\+h}!motor\+\_\+run\+\_\+stop@{motor\+\_\+run\+\_\+stop}}
+\index{motor\+\_\+run\+\_\+stop@{motor\+\_\+run\+\_\+stop}!motor.\+h@{motor.\+h}}
+\subsubsection[{\texorpdfstring{motor\+\_\+run\+\_\+stop(\+Motor m, int direction)}{motor_run_stop(Motor m, int direction)}}]{\setlength{\rightskip}{0pt plus 5cm}void motor\+\_\+run\+\_\+stop (
+\begin{DoxyParamCaption}
+\item[{{\bf Motor}}]{m, }
+\item[{int}]{direction}
+\end{DoxyParamCaption}
+)}\hypertarget{motor_8h_a264b9434c735542368d0cc1b01dbecca}{}\label{motor_8h_a264b9434c735542368d0cc1b01dbecca}
+
+
+runs the motor in the given direction until it hits its end-\/of-\/track sensor. Only checks for sensor 1 if run in direction 1, sensor 2 if run in direction 2 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & an initialized motor descriptor \\
+\hline
+{\em direction} & the direction (B\+A\+C\+K\+W\+A\+R\+DS=2, F\+O\+R\+W\+A\+RD=1) \\
+\hline
+\end{DoxyParams}
+\index{motor.\+h@{motor.\+h}!motor\+\_\+run\+\_\+time@{motor\+\_\+run\+\_\+time}}
+\index{motor\+\_\+run\+\_\+time@{motor\+\_\+run\+\_\+time}!motor.\+h@{motor.\+h}}
+\subsubsection[{\texorpdfstring{motor\+\_\+run\+\_\+time(\+Motor m, int direction, int ms)}{motor_run_time(Motor m, int direction, int ms)}}]{\setlength{\rightskip}{0pt plus 5cm}void motor\+\_\+run\+\_\+time (
+\begin{DoxyParamCaption}
+\item[{{\bf Motor}}]{m, }
+\item[{int}]{direction, }
+\item[{int}]{ms}
+\end{DoxyParamCaption}
+)}\hypertarget{motor_8h_a87e6576d19318dc626ad8a942d031a38}{}\label{motor_8h_a87e6576d19318dc626ad8a942d031a38}
+
+
+runs the motor for a specified amount of time without checking for end-\/of-\/track sensor detection 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & an initialized motor descriptor \\
+\hline
+{\em direction} & the direction \\
+\hline
+{\em ms} & the amount of time to run the command in ms \\
+\hline
+\end{DoxyParams}
+\index{motor.\+h@{motor.\+h}!motor\+\_\+set\+\_\+speed@{motor\+\_\+set\+\_\+speed}}
+\index{motor\+\_\+set\+\_\+speed@{motor\+\_\+set\+\_\+speed}!motor.\+h@{motor.\+h}}
+\subsubsection[{\texorpdfstring{motor\+\_\+set\+\_\+speed(\+Motor $\ast$m, int speed)}{motor_set_speed(Motor *m, int speed)}}]{\setlength{\rightskip}{0pt plus 5cm}void motor\+\_\+set\+\_\+speed (
+\begin{DoxyParamCaption}
+\item[{{\bf Motor} $\ast$}]{m, }
+\item[{int}]{speed}
+\end{DoxyParamCaption}
+)}\hypertarget{motor_8h_a3fc894cb686a2727fe7444c23a6dc0d4}{}\label{motor_8h_a3fc894cb686a2727fe7444c23a6dc0d4}
+
+
+sets the speed for a motor (unimplemented now) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & a pointer to an initialized motor structure \\
+\hline
+{\em speed} & the new speed to be set \\
+\hline
+\end{DoxyParams}

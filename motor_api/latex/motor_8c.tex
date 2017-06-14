@@ -1,0 +1,82 @@
+\hypertarget{motor_8c}{}\section{motor/motor.c File Reference}
+\label{motor_8c}\index{motor/motor.\+c@{motor/motor.\+c}}
+{\ttfamily \#include \char`\"{}motor.\+h\char`\"{}}\\*
+Include dependency graph for motor.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structMotor}{Motor} \hyperlink{motor_8c_a15cd21f7ef9f08a1e134c8fdb4810783}{motor\+\_\+init} (int pin1, int pin2, int sens1, int sens2)
+\begin{DoxyCompactList}\small\item\em initializes motor with end of track sensors \end{DoxyCompactList}\item 
+void \hyperlink{motor_8c_a264b9434c735542368d0cc1b01dbecca}{motor\+\_\+run\+\_\+stop} (\hyperlink{structMotor}{Motor} m, int direction)
+\begin{DoxyCompactList}\small\item\em runs the motor in the given direction until it hits its end-\/of-\/track sensor. Only checks for sensor 1 if run in direction 1, sensor 2 if run in direction 2 \end{DoxyCompactList}\item 
+void \hyperlink{motor_8c_a87e6576d19318dc626ad8a942d031a38}{motor\+\_\+run\+\_\+time} (\hyperlink{structMotor}{Motor} m, int direction, int ms)
+\begin{DoxyCompactList}\small\item\em runs the motor for a specified amount of time without checking for end-\/of-\/track sensor detection \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{motor.\+c@{motor.\+c}!motor\+\_\+init@{motor\+\_\+init}}
+\index{motor\+\_\+init@{motor\+\_\+init}!motor.\+c@{motor.\+c}}
+\subsubsection[{\texorpdfstring{motor\+\_\+init(int pin1, int pin2, int sens1, int sens2)}{motor_init(int pin1, int pin2, int sens1, int sens2)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Motor} motor\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{int}]{pin1, }
+\item[{int}]{pin2, }
+\item[{int}]{sens1, }
+\item[{int}]{sens2}
+\end{DoxyParamCaption}
+)}\hypertarget{motor_8c_a15cd21f7ef9f08a1e134c8fdb4810783}{}\label{motor_8c_a15cd21f7ef9f08a1e134c8fdb4810783}
+
+
+initializes motor with end of track sensors 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin1,pin2} & the G\+P\+IO for running motor in directions 1,2 \\
+\hline
+{\em sens1,sens2} & the G\+P\+IO input pin for end of track sensor 1,2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the generated motor descriptor 
+\end{DoxyReturn}
+\index{motor.\+c@{motor.\+c}!motor\+\_\+run\+\_\+stop@{motor\+\_\+run\+\_\+stop}}
+\index{motor\+\_\+run\+\_\+stop@{motor\+\_\+run\+\_\+stop}!motor.\+c@{motor.\+c}}
+\subsubsection[{\texorpdfstring{motor\+\_\+run\+\_\+stop(\+Motor m, int direction)}{motor_run_stop(Motor m, int direction)}}]{\setlength{\rightskip}{0pt plus 5cm}void motor\+\_\+run\+\_\+stop (
+\begin{DoxyParamCaption}
+\item[{{\bf Motor}}]{m, }
+\item[{int}]{direction}
+\end{DoxyParamCaption}
+)}\hypertarget{motor_8c_a264b9434c735542368d0cc1b01dbecca}{}\label{motor_8c_a264b9434c735542368d0cc1b01dbecca}
+
+
+runs the motor in the given direction until it hits its end-\/of-\/track sensor. Only checks for sensor 1 if run in direction 1, sensor 2 if run in direction 2 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & an initialized motor descriptor \\
+\hline
+{\em direction} & the direction (B\+A\+C\+K\+W\+A\+R\+DS=2, F\+O\+R\+W\+A\+RD=1) \\
+\hline
+\end{DoxyParams}
+\index{motor.\+c@{motor.\+c}!motor\+\_\+run\+\_\+time@{motor\+\_\+run\+\_\+time}}
+\index{motor\+\_\+run\+\_\+time@{motor\+\_\+run\+\_\+time}!motor.\+c@{motor.\+c}}
+\subsubsection[{\texorpdfstring{motor\+\_\+run\+\_\+time(\+Motor m, int direction, int ms)}{motor_run_time(Motor m, int direction, int ms)}}]{\setlength{\rightskip}{0pt plus 5cm}void motor\+\_\+run\+\_\+time (
+\begin{DoxyParamCaption}
+\item[{{\bf Motor}}]{m, }
+\item[{int}]{direction, }
+\item[{int}]{ms}
+\end{DoxyParamCaption}
+)}\hypertarget{motor_8c_a87e6576d19318dc626ad8a942d031a38}{}\label{motor_8c_a87e6576d19318dc626ad8a942d031a38}
+
+
+runs the motor for a specified amount of time without checking for end-\/of-\/track sensor detection 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & an initialized motor descriptor \\
+\hline
+{\em direction} & the direction \\
+\hline
+{\em ms} & the amount of time to run the command in ms \\
+\hline
+\end{DoxyParams}

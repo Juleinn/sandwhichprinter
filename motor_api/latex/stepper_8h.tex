@@ -1,0 +1,109 @@
+\hypertarget{stepper_8h}{}\section{stepper/stepper.h File Reference}
+\label{stepper_8h}\index{stepper/stepper.\+h@{stepper/stepper.\+h}}
+
+
+contains functions for a 2-\/pin bound stepper motor (1 pin per step in each direction) with end-\/of-\/track detection  
+
+
+{\ttfamily \#include $<$wiring\+Pi.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+Include dependency graph for stepper.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structStepper}{Stepper}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structStepper}{Stepper} \hyperlink{stepper_8h_a9c0b42527bbc338abdff73fb33f39210}{Stepper}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structStepper}{Stepper} \hyperlink{stepper_8h_a866109a4a6e33339658efe3f9f4a0450}{stepper\+\_\+init} (int pin1, int pin2, int sens1, int sens2)
+\begin{DoxyCompactList}\small\item\em initializes a stepper motor descriptor structure with output pins and sensor input pins \end{DoxyCompactList}\item 
+void \hyperlink{stepper_8h_a9bfae4ed0f30f6a3fe33c6d88f480120}{set\+\_\+speed} (\hyperlink{structStepper}{Stepper} $\ast$s, int speed)
+\begin{DoxyCompactList}\small\item\em sets the running speed for the stepper motor \end{DoxyCompactList}\item 
+int \hyperlink{stepper_8h_ab74edc7124a2186687e4f7a4ef2a96ed}{step} (\hyperlink{structStepper}{Stepper} s, int steps)
+\begin{DoxyCompactList}\small\item\em step the motor by the given amount (positive and negative) returns the number of steps actually done (stops at sensor cut) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+contains functions for a 2-\/pin bound stepper motor (1 pin per step in each direction) with end-\/of-\/track detection 
+
+
+
+\subsection{Typedef Documentation}
+\index{stepper.\+h@{stepper.\+h}!Stepper@{Stepper}}
+\index{Stepper@{Stepper}!stepper.\+h@{stepper.\+h}}
+\subsubsection[{\texorpdfstring{Stepper}{Stepper}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf Stepper} {\bf Stepper}}\hypertarget{stepper_8h_a9c0b42527bbc338abdff73fb33f39210}{}\label{stepper_8h_a9c0b42527bbc338abdff73fb33f39210}
+
+
+\subsection{Function Documentation}
+\index{stepper.\+h@{stepper.\+h}!set\+\_\+speed@{set\+\_\+speed}}
+\index{set\+\_\+speed@{set\+\_\+speed}!stepper.\+h@{stepper.\+h}}
+\subsubsection[{\texorpdfstring{set\+\_\+speed(\+Stepper $\ast$s, int speed)}{set_speed(Stepper *s, int speed)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+speed (
+\begin{DoxyParamCaption}
+\item[{{\bf Stepper} $\ast$}]{s, }
+\item[{int}]{speed}
+\end{DoxyParamCaption}
+)}\hypertarget{stepper_8h_a9bfae4ed0f30f6a3fe33c6d88f480120}{}\label{stepper_8h_a9bfae4ed0f30f6a3fe33c6d88f480120}
+
+
+sets the running speed for the stepper motor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & an initialized stepper descriptor \\
+\hline
+{\em speed} & the new speed \\
+\hline
+\end{DoxyParams}
+\index{stepper.\+h@{stepper.\+h}!step@{step}}
+\index{step@{step}!stepper.\+h@{stepper.\+h}}
+\subsubsection[{\texorpdfstring{step(\+Stepper s, int steps)}{step(Stepper s, int steps)}}]{\setlength{\rightskip}{0pt plus 5cm}int step (
+\begin{DoxyParamCaption}
+\item[{{\bf Stepper}}]{s, }
+\item[{int}]{steps}
+\end{DoxyParamCaption}
+)}\hypertarget{stepper_8h_ab74edc7124a2186687e4f7a4ef2a96ed}{}\label{stepper_8h_ab74edc7124a2186687e4f7a4ef2a96ed}
+
+
+step the motor by the given amount (positive and negative) returns the number of steps actually done (stops at sensor cut) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & an initialized stepper descriptor \\
+\hline
+{\em steps} & the number of steps performed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the true number of steps performed 
+\end{DoxyReturn}
+\index{stepper.\+h@{stepper.\+h}!stepper\+\_\+init@{stepper\+\_\+init}}
+\index{stepper\+\_\+init@{stepper\+\_\+init}!stepper.\+h@{stepper.\+h}}
+\subsubsection[{\texorpdfstring{stepper\+\_\+init(int pin1, int pin2, int sens1, int sens2)}{stepper_init(int pin1, int pin2, int sens1, int sens2)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Stepper} stepper\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{int}]{pin1, }
+\item[{int}]{pin2, }
+\item[{int}]{sens1, }
+\item[{int}]{sens2}
+\end{DoxyParamCaption}
+)}\hypertarget{stepper_8h_a866109a4a6e33339658efe3f9f4a0450}{}\label{stepper_8h_a866109a4a6e33339658efe3f9f4a0450}
+
+
+initializes a stepper motor descriptor structure with output pins and sensor input pins 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin1,pin2} & the pins for the stepper to step \\
+\hline
+{\em sens1,sens2} & the pins for the end of track sensors \\
+\hline
+\end{DoxyParams}

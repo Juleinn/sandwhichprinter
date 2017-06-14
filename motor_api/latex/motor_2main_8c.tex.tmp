@@ -1,0 +1,24 @@
+\hypertarget{motor_2main_8c}{}\section{motor/main.c File Reference}
+\label{motor_2main_8c}\index{motor/main.\+c@{motor/main.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$wiring\+Pi.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}motor.\+h\char`\"{}}\\*
+Include dependency graph for main.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{motor_2main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{motor/main.\+c@{motor/main.\+c}!main@{main}}
+\index{main@{main}!motor/main.\+c@{motor/main.\+c}}
+\subsubsection[{\texorpdfstring{main(int argc, char $\ast$$\ast$argv)}{main(int argc, char **argv)}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}\hypertarget{motor_2main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{}\label{motor_2main_8c_a3c04138a5bfe5d72780bb7e82a18e627}
