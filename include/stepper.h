@@ -1,3 +1,7 @@
+/**
+\file stepper.h
+\brief contains functions for a 2-pin bound stepper motor (1 pin per step in each direction) with end-of-track detection
+*/
 #ifndef STEPPER_H_
 #define STEPPER_H_
 
@@ -13,14 +17,27 @@ struct Stepper{
 typedef struct Stepper Stepper;
 
 
-/* Inits a stepper motor for 2 given pins */
+/**
+\brief initializes a stepper motor descriptor structure with output pins and sensor input pins
+\param pin1, pin2 the pins for the stepper to step
+\param sens1, sens2 the pins for the end of track sensors
+*/
 Stepper stepper_init(int pin1, int pin2, int sens1, int sens2);
 
-/* Set the speed for a motor */
+/**
+\brief sets the running speed for the stepper motor
+\param s an initialized stepper descriptor
+\param speed the new speed
+*/
 void set_speed(Stepper * s, int speed);
 
-/* step the motor by the given amount (positive and negative) 
-returns the number of steps actually done (stops at sensor cut) */
+/**
+\brief step the motor by the given amount (positive and negative) 
+returns the number of steps actually done (stops at sensor cut) 
+\param s an initialized stepper descriptor
+\param steps the number of steps performed
+\return the true number of steps performed
+*/
 int step(Stepper s, int steps);
 
 

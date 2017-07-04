@@ -25,10 +25,10 @@
 int main(int argc, char ** argv)
 {
 	wiringPiSetupGpio();
-	Motor disk_drv = motor_init(23, 24, 5, 6);
+	Motor disk_drv = motor_init(23, 24, 13, 6);
 	Motor conveyor = motor_init(25, 18, 0, 0);
 	Motor extruder = motor_init(12, 16, 0, 0);
-	Stepper head = stepper_init(14, 15, 13, 20);
+	Stepper head = stepper_init(14, 15, 20, 26);
 	set_speed(&head, 100);
 	// recalibrate
 	step(head, 2000);	// will stop before 2000 steps

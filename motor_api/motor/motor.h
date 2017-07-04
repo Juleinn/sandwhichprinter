@@ -16,8 +16,9 @@ struct Motor{
 };
 typedef struct Motor Motor;
 
-// pin 0 will be considered none
+#define CYCLE_TIME 10000	// 10 ms
 
+// pin 0 will be considered none
 
 /** 
 \brief initializes motor with end of track sensors

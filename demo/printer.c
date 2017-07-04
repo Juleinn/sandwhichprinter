@@ -27,7 +27,7 @@ int main(int argc, char ** argv)
 	wiringPiSetupGpio();
 	Motor disk_drv = motor_init(23, 24, 5, 6);
 	Motor conveyor = motor_init(25, 18, 0, 0);
-	Motor extruder = motor_init(12, 16, 0, 0);
+	Motor extruder = motor_init(12, 16, 19, 19);
 	Stepper head = stepper_init(14, 15, 13, 20);
 
 	motor_run_stop_async(&disk_drv, FORWARD);
