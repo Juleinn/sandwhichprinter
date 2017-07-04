@@ -11,6 +11,7 @@ import "C"
 import (
 	"parser"
 	"fmt"
+	"light"
 	"errors"
 //	"time"
        )
@@ -21,6 +22,10 @@ var disk_drive	C.Motor
 var extruder1	C.Motor
 var extruder2	C.Servo
 var head		C.Stepper
+
+var bulb		light.Light
+var yLED		light.Light
+var gLED		light.Light
 
 var initialized bool
 
@@ -33,6 +38,15 @@ func Init(){
 	if !initialized {
 		// setup the GPIO
 		C.wiringPiSetupGpio()
+
+		// init lights
+		gLED.Init(9);
+		gLED.SetBlink(0, 1000);
+		yLED.Init(10);
+		yLED.SetBlink(1000, 0);
+		bulb.Init(11);
+		bulb.SetBlink(0, 1000);
+
 		// init pins for motors and sensors
 		disk_drive = C.motor_init(23, 24, 13, 6);
 		conveyor = C.motor_init(18, 25, 21, 21);
@@ -40,6 +54,8 @@ func Init(){
 		extruder2 = C.servo_init(5);
 		head = C.stepper_init(14, 15, 20, 26);
 		C.set_speed(&head, 100);
+
+
 		// calibrate stepper head
 		C.step(head, 2000);
 		stepper_width =  int(C.step(head, -2000));
@@ -56,6 +72,9 @@ func Init(){
 
 		initialized = true
 
+		yLED.SetBlink(0, 1000);
+		gLED.SetBlink(1000, 0);
+
 		// launch asynchronous print loop
 		go printer_loop()
 	} else {
@@ -71,7 +90,7 @@ func push_slice(){
 }
 
 func printer_loop(){
-	for {
+		for {
 		<-sandwiches_states
 		// fmt.Println("Printing sandwich : ", sandwiches[0])
 		// clear first entry of the fifo
@@ -82,6 +101,8 @@ func printer_loop(){
 }
 
 func print(sandwich parser.Sandwich){
+	// set lightbulb
+	bulb.SetBlink(1000, 0);
 	// we don't want to print on the conveyor so discard any sandwich with no bread
 	if len(sandwich.Slices) == 0{
 		fmt.Println("Print warning : discarding sandwich because there is no bread");
@@ -132,7 +153,9 @@ func print(sandwich parser.Sandwich){
 
 	// push the slice out
 	C.motor_run_time(conveyor, C.FORWARD, 10000);
+	
 
+	bulb.SetBlink(0, 1000);
 }
 
 func print_sandwich_fifo(){
